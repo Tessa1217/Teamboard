@@ -5,7 +5,8 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "storybook": "storybook dev -p 6006 -c apps/docs/.storybook"
+    "storybook": "storybook dev -p 6006 -c apps/docs/.storybook",
+    "build-storybook": "storybook build -c apps/docs/.storybook"
   },
   "devDependencies": {
     "@storybook/addon-docs": "^9.0.15",
