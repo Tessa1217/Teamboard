@@ -1,9 +1,7 @@
-import React from "react";
 import { createRoot } from "react-dom/client";
 import "./style.css";
 import typescriptLogo from "/typescript.svg";
-import { Header, Counter } from "@repo/ui";
-
+import { Avatar, Button, Badge } from "@repo/ui";
 const App = () => (
   <div>
     <a href="https://vitejs.dev" target="_blank">
@@ -16,10 +14,20 @@ const App = () => (
         alt="TypeScript logo"
       />
     </a>
-    <Header title="Web" />
-    <div className="card">
-      <Counter />
-    </div>
+    <Button color="blue" disabled={true}>
+      button
+    </Button>
+    <Button color="red">button</Button>
+    <Button color="purple">button</Button>
+    <Badge>badge</Badge>
+    <Badge color="blue" shape="flat">
+      badge
+    </Badge>
+    <Badge color="red" onClose={() => console.log("closed")}>
+      closable badge
+    </Badge>
+    <Avatar altText="권유진" />
+    <Avatar altText="YuJin Kwon" />
   </div>
 );
 
