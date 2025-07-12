@@ -3,5 +3,8 @@
   "include": ["src"],
   "compilerOptions": {
     "jsx": "react-jsx"
+    // "paths": {
+    //   "@repo/ui": ["../../packages/ui/*"]
+    // }
   }
 }
