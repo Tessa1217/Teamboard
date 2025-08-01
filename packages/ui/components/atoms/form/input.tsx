@@ -1,20 +1,40 @@
 import { forwardRef } from "react";
-
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+import { type BasicInputProps, getInputClasses } from "./input-styles";
+interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement>,
+    BasicInputProps {
   value?: string;
   defaultValue?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ value, defaultValue, onChange, ...props }, ref) => {
+  (
+    {
+      value,
+      defaultValue,
+      onChange,
+      inputWidth,
+      inputSize,
+      variant,
+      disabled,
+      ...props
+    },
+    ref
+  ) => {
+    const inputClass = getInputClasses({
+      inputWidth,
+      inputSize,
+      variant,
+      disabled,
+    });
     return (
       <input
         ref={ref}
         value={value}
         defaultValue={defaultValue}
         onChange={onChange}
-        className="border border-gray-400 px-3 py-2 rounded"
+        className={inputClass}
         {...props}
       />
     );

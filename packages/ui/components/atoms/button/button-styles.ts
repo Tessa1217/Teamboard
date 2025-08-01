@@ -1,10 +1,11 @@
-import type { Color, Size } from "../../../types/ui";
+import type { Color, Size, Width } from "../../../types/ui";
 
 export type Variant = "solid" | "outline" | "ghost";
 
 export interface BaseButtonProps {
   color?: Color;
   size?: Size;
+  width?: Width;
   variant?: Variant;
   disabled?: boolean;
   iconOnly?: boolean;
@@ -13,6 +14,7 @@ export interface BaseButtonProps {
 export function getButtonClasses({
   color = "blue",
   size = "md",
+  width = "auto",
   variant = "solid",
   disabled = false,
   iconOnly = false,
@@ -64,14 +66,21 @@ export function getButtonClasses({
 
   const sizeMap: Record<Size, string> = {
     sm: "px-3 py-1.5 text-sm",
-    md: "px-4 py-2",
+    md: "px-4 py-2 text-base",
     lg: "px-6 py-3 text-lg",
+    xl: "px-8 py-4 text-xl",
   };
 
   const iconOnlyPadding: Record<Size, string> = {
     sm: "p-2",
     md: "p-2.5",
     lg: "p-3",
+    xl: "p-4",
+  };
+
+  const widthMap: Record<Width, string> = {
+    auto: "w-auto",
+    full: "w-full",
   };
 
   const disabledClasses = "opacity-50 cursor-not-allowed pointer-events-none";
@@ -81,6 +90,7 @@ export function getButtonClasses({
     colorMap[color][variant],
     iconOnly ? iconOnlyPadding[size] : sizeMap[size],
     disabled && disabledClasses,
+    widthMap[width],
   ];
 
   return classes.filter(Boolean).join(" ");

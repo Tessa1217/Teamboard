@@ -8,6 +8,8 @@ export type Color =
   | "purple"
   | "gray";
 
-export type Size = "sm" | "md" | "lg";
+export type Size = "sm" | "md" | "lg" | "xl";
+
+export type Width = "auto" | "full";
 
 export type Shape = "circle" | "rounded" | "square";
