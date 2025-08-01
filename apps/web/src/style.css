@@ -1,2 +1,6 @@
 @import "tailwindcss";
 @source "../../../packages/ui";
+
+#app {
+  height: 100svh;
+}

@@ -8,7 +8,7 @@ const Header = () => {
     { name: "Manage", href: "/manage" },
   ];
   return (
-    <header className="w-full border-b border-gray-200 bg-white dark:bg-gray-900 dark:border-gray-800">
+    <header className="w-full border-b border-gray-200 bg-white dark:bg-gray-900 dark:border-gray-800 h-[60px]">
       <div className="mx-auto flex max-w-screen-xl items-center justify-between px-4 py-3 md:px-6">
         {/* Logo */}
         <Link
